@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
+// import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  render() {
+import { ReactComponent as logo } from './logo.svg';
+import { Icon } from 'antd';
+import { CustomIconComponentProps } from 'antd/lib/icon';
+
+const App:React.FC = () => {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <Icon component={ logo // as React.ComponentType<CustomIconComponentProps>
+          }></Icon>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -22,7 +26,6 @@ class App extends Component {
         </header>
       </div>
     );
-  }
 }
 
 export default App;
